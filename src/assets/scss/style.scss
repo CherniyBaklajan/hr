@@ -1,0 +1,199 @@
+@import "/src/assets/fonts/bebasneue/bebasneue.css";
+@import "/src/assets/fonts/avenir/avenir.css";
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*{
+  font-family: 'Avenir', sans-serif;
+}
+.login-page, .forgot-page{
+  height: 100vh;
+  .left-img{
+    height: 100vh;
+    background: url("/assets/img/shape/login_img.png") no-repeat center center;
+    background-size: cover;
+  }
+  .logo{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 32px;
+    font-family: "Bebas Neue", serif;
+  }
+  .forgot-btn{
+    color: #000000;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", serif;
+    margin-top: 25px;
+    display: block;
+  }
+  .title{
+    font-size: 18px;
+    color: #3C4858;
+    margin-bottom: 32px;
+  }
+  .hint{
+    color: #8492A6;
+    width: 350px;
+    margin-bottom: 25px;
+  }
+  .login-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}
+.custom-form{
+  .form-item{
+    text-align: left;
+    padding-bottom: 30px;
+    &.error{
+      input{
+        border: 1px solid red;
+      }
+    }
+    .checkbox-box{
+      label{
+        font-size: 12px;
+        color: #8492A6;
+        text-align: left;
+        margin-left: 10px;
+        text-transform: capitalize;
+        font-family: 'Avenir', sans-serif;
+      }
+    }
+    label{
+      font-size: 16px;
+      text-transform: uppercase;
+      color: #8492A6;
+      text-align: left;
+      font-family: "Bebas Neue", serif;
+    }
+    input:not([type='checkbox']){
+      padding: 12px 16px;
+      width: 350px;
+      border: 1px solid #D3DCE6;
+      border-radius: 5px;
+    }
+    .error-text{
+      margin: 5px 0 0 0;
+      font-size: 12px;
+      color: red;
+    }
+  }
+  .submit-btn{
+    padding: 16px 0;
+    text-align: center;
+    width: 350px;
+    background: #050504;
+    border-radius: 5px;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: none;
+    &.disabled{
+      background: #EFF2F7;
+      color: #D3DCE6;
+    }
+  }
+}
+
+.p-0{
+  padding: 0;
+}
+
+a,
+p,
+h1,h2,h3,h4
+{
+  text-decoration: none !important;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+
+.App {
+  background: #498CEC;
+  min-height: 100vh;
+  font-size: 18px;
+  .select-city-box{
+    padding-top: 30px;
+    .basic-single{
+      color: hsl(0, 0%, 20%) !important;
+    }
+    .city-actions{
+      margin-top: 30px;
+      a {
+        opacity: 0.6;
+        img{
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .time{
+      margin-top: 5px;
+      font-size: 24px;
+      margin-left: 50px;
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+  .main-temperature-box{
+    padding-top: 50px;
+    h1{
+      font-size: 80px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    p{
+      margin-top: 30px;
+      font-size: 30px;
+    }
+    .info-box{
+      margin-top: 20px;
+      color: white;
+      span{
+        padding-left: 15px;
+      }
+    }
+  }
+  .fivedays-box{
+    margin-top: 70px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.66);
+    .arrow-box{
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.42);
+      text-align: center;
+      line-height: 60px;
+      border-radius: 100%;
+      margin: 30px auto;
+    }
+    .slider-box{
+      overflow: hidden;
+      .weather-box{
+        width: 100px;
+        text-align: center;
+        position: relative;
+        transition: 1s;
+        display: inline-block;
+        &.br-left{
+          border-left: 1px solid rgba(255, 255, 255, 0.66);
+          width: 99px;
+        }
+        p{
+          margin-top: 10px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
