@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import LoginPage from "./pages/auth/login";
 import ForgotPage from "./pages/auth/forgot";
+import Company from "./pages/company/company";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +15,7 @@ ReactDOM.render(
               <Route path="/" element={<App />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/forgot" element={<ForgotPage />} />
-              {/*<Route path="/dashboard" element={<Dashboard />} />*/}
+              <Route path="/company" element={<Company />} />
               <Route
                   path="*"
                   element={

@@ -1,4 +1,5 @@
 import '../assets/scss/style.scss';
+import '../assets/awesome/css/all.css';
 import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +8,8 @@ const App = () => {
 
   useEffect(() => {
     // Если не авторизован перенаправляем на страницу авторизации
-    navigate('/login');
+    // navigate('/login');
+    navigate('/company');
   });
 
   return (
