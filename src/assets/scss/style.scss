@@ -59,6 +59,9 @@ body {
       }
     }
     .checkbox-box{
+      input{
+        accent-color: black;
+      }
       label{
         font-size: 12px;
         color: #8492A6;
@@ -102,14 +105,9 @@ body {
     }
   }
 }
-.filter-box{
-  height: 100vh;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+
+.filter-boxs{
+  margin-bottom: 30px;
   .title-filter-box{
     text-transform: uppercase;
     font-weight: 800;
@@ -123,19 +121,81 @@ body {
       padding-left: 20px;
     }
   }
+  .sub-list{
+    margin: 10px 0 10px 10px;
+  }
   .list-filter-box{
     overflow: hidden;
     transition: 1s;
     padding-right: 15px;
+    .parent-title{
+      font-weight: bold;
+      i{
+        margin-right: 10px;
+      }
+    }
     .list-filter-box-item{
       display: flex;
       justify-content: space-between;
       font-size: 14px;
       .name{
         color: #3C4858;
+        input{
+          accent-color: black;
+          margin-right: 10px;
+        }
       }
       .count{
         font-weight: 800;
+        color: #3C4858;
+      }
+    }
+    .filter-time-box{
+      .time-text{
+        font-weight: 800;
+        font-size: 14px;
+      }
+      .checkbox-list{
+        display: inline-flex;
+        margin-top: 15px;
+        .checkbox-item{
+          a{
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin-right: 5px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 32px;
+            color: black;
+            border: 1px solid #D3DCE6;
+            font-size: 13px;
+            &.active{
+              color: white;
+              background: #1F2D3D;
+            }
+          }
+        }
+      }
+      .irs--round{
+        .irs-handle{
+          border: none;
+          background-color: #1F2D3D;
+          width: 16px;
+          height: 16px;
+          top: 29px;
+          box-shadow: none;
+        }
+        .irs-bar{
+          background-color: #1F2D3D;
+          height: 2px;
+        }
+        .irs-line{
+          height: 2px;
+        }
+        .irs-grid-pol{
+          display: none;
+        }
       }
     }
   }
@@ -249,6 +309,14 @@ body {
       height: 100vh;
       .filter-box{
         border-right: 2px solid #E5E9F2;
+        height: 100vh;
+        overflow-y: scroll;
+        padding-bottom: 100px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
         .search-input{
           margin-top: 25px;
           background: url('/assets/img/search.svg') no-repeat 15px center, #F9FAFC;
@@ -270,6 +338,7 @@ body {
             padding-left: 15px;
           }
         }
+
       }
     }
   }

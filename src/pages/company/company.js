@@ -1,9 +1,19 @@
 import Layout from "../../components/layout";
 import {Col, Row} from "react-bootstrap";
-import React from "react";
+import React, {useState} from "react";
 import FilterBox from "../../components/filter-box";
+import CustomForm from "../../components/form";
+import CustomTable from "../../components/table";
 
 const Company = () => {
+    const [filters, setFilters] = useState([]);
+
+    function setFiltersValue(filter){
+        let newFilters = filters.filter(e => e.name !== filter.name);
+        setFilters([...newFilters, filter]);
+        console.log([...newFilters, filter]);
+    }
+
     return (
         <Layout>
             <div className="upper-line">
@@ -28,13 +38,37 @@ const Company = () => {
                             <div className="filter-title">
                                 Настройки фильтра <i className="fas fa-filter"></i>
                             </div>
-                            {FilterBox('Рубрики', [
-                                {name: 'Авто-мото', count: 10},
-                                {name: 'Бытовая техника', count: 1},
+                            {FilterBox('Рубрики', 'category', 'list', setFiltersValue, [
+                                {name: 'Авто-мото', value: 1, count: 10, sub: [
+                                        {name: 'sub 1', value: 3, count: 1},
+                                        {name: 'sub 2', value: 4, count: 1}
+                                    ]},
+                                {name: 'Бытовая техника', value: 2, count: 1},
+                            ])}
+                            {FilterBox('По регионам', 'region', 'list', setFiltersValue, [
+                                {name: 'Узбекистан', value: 'uz', count: 130},
+                                {name: 'Казахстан', value: 'kz', count: 10},
+                                {name: 'Грузия', value: 'gz', count: 27},
+                                {name: 'Россия', value: 'ru', count: 50},
+                                {name: 'Германия', value: 'gr', count: 32},
+                            ])}
+                            {FilterBox('Время работы','work_time', 'time', setFiltersValue)}
+                            {FilterBox('Тип', 'type', 'checkbox', setFiltersValue, [
+                                {name: 'Государственные', value: 1, count: 20},
+                                {name: 'Частные', value: 2, count: 10},
                             ])}
                         </div>
                     </Col>
-                    <Col sm={9}></Col>
+                    <Col sm={9}>
+                        {CustomTable([
+                            {title: 'Название', name: 'name'},
+                            {title: 'Регион', name: 'zone'},
+                            {title: 'Рубрика', name: 'category'},
+                        ],
+                        [
+                            {name: 'Global Solutions', zone: 'Узбекистан', category: 'Информационные технологии'}
+                        ])}
+                    </Col>
                 </Row>
             </div>
         </Layout>
